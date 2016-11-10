@@ -1,2 +1,2 @@
 # NewCode
-Coding with my friend!
+Coding with my friends!
