@@ -1,3 +1,5 @@
+#Rewrote, made cleaner, need to comment whole thing...
+
 from random import randint
 from sys import exit
 
@@ -8,13 +10,13 @@ players = [
 	]	
 opponent = players[randint(0, 2)]
 result = {
-		1 : "Rock beats Scissors! You win!",
-		2 : "Rock loses to Paper! You lost!",
-		3 : "Scissors beats Paper! You win!", 
-		4 : "Scissors loses to Rock! You lose!",
-		5 : "Paper beats Rock! You win!",
-		6 : "Paper loses to Scissors! You lose!", 
-		7 : "It's a tie!"
+		1 : "Your opponent threw Scissors! Rock beats Scissors! You win!",
+		2 : "Your opponent threw Paper! Rock loses to Paper! You lost!",
+		3 : "Your opponent threw Paper! Scissors beats Paper! You win!", 
+		4 : "Your opponent threw Rock! Scissors loses to Rock! You lose!",
+		5 : "Your opponent threw Rock! Paper beats Rock! You win!",
+		6 : "Your opponent threw Scissors! Paper loses to Scissors! You lose!", 
+		7 : "You're opponent chose the same! It's a tie!"
 	}
 
 def game(opponent):
@@ -29,47 +31,39 @@ def game(opponent):
 	if choice.lower() == "rock":
 		if opponent == "scissors":
 			print result[1]
-			print("Wasn't that fun!?")
 			return try_again()
 		elif opponent == "paper":
 			print result[2]
-			print("Wasn't that fun!?")
 			return try_again()
 		else:
 			print result[7]
-			print("Wasn't that fun!?")
 			return try_again()
 	elif choice.lower() == "scissors":
 		if opponent == "paper":
 			print result[3]
-			print("Wasn't that fun!?")
 			return try_again()
 		elif opponent == "rock":
 			print result[4]
-			print("Wasn't that fun!?")
 			return try_again()
 		else:
 			print result[7]
-			print("Wasn't that fun!?")
 			return try_again()
 	elif choice.lower() == "paper":
 		if opponent == "rock":
 			print result[5]
-			print("Wasn't that fun!?")
 			return try_again()
 		elif opponent == "scissors":
 			print result[6]
-			print("Wasn't that fun!?")
 			return try_again()
 		else:
 			print result[7]
-			print("Wasn't that fun!?")
 			return try_again()
 	else:
 		print("That is not an option. Please try again.")
 		return try_again()
-	
+
 def try_again():
+	print("\nWasn't that fun!?")
 	print("Would you like to try again?")
 	
 	try_again = raw_input("> ")
@@ -79,5 +73,7 @@ def try_again():
 		return game(opponent)
 	else:
 		exit()
+
+
 		
 game(opponent)
