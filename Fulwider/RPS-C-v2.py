@@ -2,6 +2,7 @@
 import random
 
 weapons = ["rock","paper","scissor"]
+choice = ""
 
 result = {
     1 : "Rock beats Scissors! You win!",
@@ -11,9 +12,8 @@ result = {
     5 : "Paper beats Rock! You win!",
     6 : "Paper loses to Scissors! You lose!", 
     7 : "It's a tie!"}
-
-##Welcome user and allow choice of weapon. Randomly 
-def weaponChoice():	
+ 
+def weaponChoice(choice):	
     print """
     Welcome to Rock, Paper, Scissors!
     Be prepared for battle. First you
@@ -23,26 +23,46 @@ def weaponChoice():
 
     Choose your weapon....
     """
+
     choice = raw_input("...")	
+
     if choice in weapons:
         return choice
     else:
         print "There is no weapon of that kind here. Try again."
-        weaponChoice()
-        ##Add clearing the screen before reprinting 
+        weaponChoice() 
 
 
-##Generate CPU and Make comparison 
-def battle():
-    print "good so far"
+def battle(choice):
     print choice
-
-
-
+    enemy = random.choice(weapons)
     
+    if choice.lower == "rock":
+        if enemy == "rock":
+            print "Again slaves!"
+        elif enemy == "paper":
+            print "You Lose!"
+        else:
+            print "you win!"
 
-## Result printing 
+    elif choice.lower == "paper":
+        if enemy == "paper":
+            print "Again slaves!"
+        elif enemy == "scissor":
+            print "You Lose!"
+        else:
+            print "you win! but you're a pussy for choosing paper"
 
-weaponChoice()
-battle()
-print choice*5
+    elif choice.lower == "scissor":
+        if enemy == "scissor":
+            print "Again slaves!"
+        elif enemy == "rock":
+            print "You Lose!"
+        else:
+            print "you win!"
+    else:
+        print "error"
+
+
+weaponChoice(choice)
+battle(choice)
