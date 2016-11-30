@@ -1,2 +1,3 @@
 text integration
 test test
+test^3
