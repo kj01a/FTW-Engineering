@@ -2,7 +2,6 @@
 import random
 
 weapons = ["rock","paper","scissor"]
-choice = ""
 
 result = {
     1 : "Rock beats Scissors! You win!",
@@ -13,7 +12,7 @@ result = {
     6 : "Paper loses to Scissors! You lose!", 
     7 : "It's a tie!"}
  
-def weaponChoice(choice):	
+def weapon():	
     print """
     Welcome to Rock, Paper, Scissors!
     Be prepared for battle. First you
@@ -30,14 +29,14 @@ def weaponChoice(choice):
         return choice
     else:
         print "There is no weapon of that kind here. Try again."
-        weaponChoice() 
+        weapon() 
 
 
-def battle(choice):
-    print choice
+def battle(passed):
+    print passed
     enemy = random.choice(weapons)
     
-    if choice.lower == "rock":
+    if passed == "rock":
         if enemy == "rock":
             print "Again slaves!"
         elif enemy == "paper":
@@ -45,7 +44,7 @@ def battle(choice):
         else:
             print "you win!"
 
-    elif choice.lower == "paper":
+    elif passed == "paper":
         if enemy == "paper":
             print "Again slaves!"
         elif enemy == "scissor":
@@ -53,7 +52,7 @@ def battle(choice):
         else:
             print "you win! but you're a pussy for choosing paper"
 
-    elif choice.lower == "scissor":
+    elif passed == "scissor":
         if enemy == "scissor":
             print "Again slaves!"
         elif enemy == "rock":
@@ -63,6 +62,5 @@ def battle(choice):
     else:
         print "error"
 
-
-weaponChoice(choice)
-battle(choice)
+foo=weapon()
+battle(foo)
