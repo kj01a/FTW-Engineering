@@ -58,7 +58,7 @@ You are spotted by a monster!
 
 monster = random.choice(weapons)
 
-print monster
+print monster#for debugging
 
 if player_one_choice > monster:
 	print "Some how you and your measely %s have found victory today!" % player_one_choice
