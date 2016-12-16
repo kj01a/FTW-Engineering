@@ -6,6 +6,8 @@ rock = 'rock'
 scissors = 'scissors'
 paper = 'paper'
 
+rock > scissors > paper > rock #trying to set victory solutions?
+
 dict = {rock:
 """
 oh big tough guy choosing the rock.
@@ -23,7 +25,7 @@ paper:
 Heaven help us the little bugger chose the paper.
 Get the medic ready!
 Alright snowflake go dish out some papercuts.
-"""
+"""}
 
 print "Welcome to the war maggot scum!"
 print """
@@ -36,24 +38,36 @@ Get out there and win some fights.
 
 player_one_choice = raw_input("Rock, Paper, or Scissors? ")
 
-if player_one_choice in weapons:# want it to check weapons list for correct weapons, having trouble.
-	if weapons == 'rock':
-		print dict[rock]# print flavor text
-	elif weapons == 'scissors':
-		print dict[scissors]
-	elif weapons == 'paper':
-		print dict[paper]
-	else:
-		print "I told you maggot no shinies for you!"
-		#Loop script that takes you back to the raw input
+#if player_one_choice in weapons:# want it to check weapons list for correct weapons, having trouble.
+#	if weapons == 'rock':
+#		print dict[rock]# print flavor text
+#	elif weapons == 'scissors':
+#	elif weapons == 'paper':
+#		print dict[paper]
+#	else:
+#		print "I told you maggot no shinies for you!"
+		#I cant get this section to work.
 
+#This does work.
+if weapons == 'rock':
+	print dict[rock]# print flavor text
+elif weapons == 'scissors':
+	print dict[scissors]
+elif weapons == 'paper':
+	print dict[paper]
+else:
+	print "I told you maggot no shinies for you!"
+	#Loop script that takes you back to the raw input
+	
 print """
 You proceed ahead with your %s.
 The battle feild is lit up by the explosions.
 You are spotted by a monster!
-"""
+""" % player_one_choice
 
 monster = random.choice(weapons)
+
+print monster #For debugging purposes
 
 if player_one_choice > monster:
 	print "Some how you and your measely %s have found victory today!" % player_one_choice
