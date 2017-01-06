@@ -63,6 +63,7 @@ class RockPaperScissors(object):
             self.you_have_lost()
 
     def you_have_tied(self):
+        #It's basically the same as losing. 
         print("\nThey are both vanquished, My Lord! It is a tie! A rare occurance,")
         print("My Lord, to be sure. But the RoShamBo must have a victor. Shall we")
         print("go again?")
