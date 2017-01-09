@@ -4,6 +4,9 @@
 #2.0 changed to oo paradigm, and cleaned up the code.
 #   Added more flavor text
 #   Added comments
+#2.1 Corrected spelling
+#Things to do:
+#   Access flava text from files instead of using print statments. 
 
 from random import randint
 from sys import exit
@@ -12,12 +15,12 @@ class RockPaperScissors(object):
     def __init__(self):
         #Construct for player to chose from
         #Give options cardinal values for determining winner later.
-        self.possilbe_warrior_choices = ["rock", "paper", "scissors"]
+        self.possible_warrior_choices = ["rock", "paper", "scissors"]
         self.warrior_ranks = {'rock' : 0, 'scissors' : 1, 'paper' : 2}
 
     def opponent_chooses_champion(self):
         #Assign random choice to computer player
-        self.opponents_champion = self.possilbe_warrior_choices[randint(0, 2)]
+        self.opponents_champion = self.possible_warrior_choices[randint(0, 2)]
         return self.opponents_champion
 
     def player_chooses_champion(self):
@@ -25,7 +28,7 @@ class RockPaperScissors(object):
         self.players_champion = input("> ")
         print("\nAn excellent choice, Sire.") #Flava test
         #Catch if player is not choosing from available options.
-        if self.players_champion.lower() in self.possilbe_warrior_choices:
+        if self.players_champion.lower() in self.possible_warrior_choices:
             return self.players_champion
         else:
             #Flava text
