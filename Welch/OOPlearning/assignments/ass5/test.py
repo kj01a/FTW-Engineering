@@ -8,7 +8,7 @@ import sys
 from ass5 import ConfigDict
 
 
-cd = ConfigDict("config_file.txt")
+cd = ConfigDict("config_file.json")
 
 if len(sys.argv) == 3:
     key = sys.argv[1]
