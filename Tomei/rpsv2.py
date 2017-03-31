@@ -1,4 +1,5 @@
 #Added functions to the game.
+#Would like to work on loops for better understanding
 
 import random
 
@@ -90,7 +91,7 @@ def victory(player_one_choice):
 			print "You and the monster are both morons using the same weapon against each other."
 		else:
 			print "You messed up kid, destroying the whole world."
-#loop script back to rawinput
+
 	else:#for all other returns
 		print "You messed up kid, destroying the whole world."
 
