@@ -1,3 +1,5 @@
+#Added functions to the game.
+
 import random
 
 
@@ -37,7 +39,7 @@ def intro():
 	Get out there and win some fights.
 	"""
 
-	player_one_choice = raw_input("Rock, Paper, or Scissors? ")
+	player_one_choice = raw_input("Rock, Paper, or Scissors? ")#Determines players choice of Rock, paper, or scissors.
 
 	if player_one_choice == 'rock':
 		print dict[rock]# print flavor text
@@ -54,14 +56,14 @@ def intro():
 		You are spotted by a monster!
 		""" % player_one_choice
 		
-	return player_one_choice
+	return player_one_choice#saves players choice of weapon to be recalled by other function
 
 def victory(player_one_choice):
-	monster = random.choice(weapons)
+	monster = random.choice(weapons)#determines opponents choice of rock, paper, or scissors
 
-	print "The monster has chosen %s prepare your ass!" % monster
+	print "The monster has chosen %s prepare your ass!" % monster#Clarification
 		
-	if player_one_choice == 'rock':
+	if player_one_choice == 'rock':#Rock victory and loss tree
 		if monster == 'scissors':
 			print "Some how you and your measely rock have found victory today!" 
 		elif monster == 'paper':
@@ -70,7 +72,7 @@ def victory(player_one_choice):
 			print "You and the monster are both morons using the same weapon against each other."
 		else:
 			print "You messed up kid, destroying the whole world."
-	elif player_one_choice == 'scissors':
+	elif player_one_choice == 'scissors':#Scissors victory and loss tree
 		if monster == 'paper':
 			print "Some how you and your measely scissors have found victory today!" 
 		elif monster == 'rock':
@@ -79,7 +81,7 @@ def victory(player_one_choice):
 			print "You and the monster are both morons using the same weapon against each other."
 		else:
 			print "You messed up kid, destroying the whole world."
-	elif player_one_choice	== 'paper':
+	elif player_one_choice	== 'paper':#paper victory and loss tree
 		if monster == 'rock':
 			print "Some how you and your measely paper have found victory today!" 
 		elif monster == 'scissors':
@@ -89,7 +91,7 @@ def victory(player_one_choice):
 		else:
 			print "You messed up kid, destroying the whole world."
 #loop script back to rawinput
-	else:
+	else:#for all other returns
 		print "You messed up kid, destroying the whole world."
 
 game = intro()
